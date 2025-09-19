@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAMVAAD SETU</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #0F1A2B;
+            color: #D1CFC9;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 20px;
+            background: #0F1A2B;
+            position: relative;
+            z-index: 1000;
+        }
+
+        .logo img {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .hamburger-menu {
+            font-size: 2.2rem;
+            color: #e8e6e3;
+            cursor: pointer;
+        }
+
+        /* Sidebar Navigation */
+        .sidebar {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 2000;
+            top: 0;
+            right: 0;
+            background-color: #192c44;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .sidebar a {
+            padding: 15px 8px 15px 32px;
+            text-decoration: none;
+            font-size: 20px;
+            color: #e8e6e3;
+            display: block;
+            transition: 0.3s;
+            width: 100%;
+            text-align: center;
+        }
+
+        .sidebar a:hover {
+            color: #D1CFC9;
+            background-color: #0a111a;
+        }
+
+        .sidebar .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+
+        /* Hero Section */
+        .hero {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #D1CFC9;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.1rem;
+            color: #BDC4D4;
+            margin-bottom: 20px; /* Added margin to push content below */
+        }
+
+        /* Main Content Container */
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-bottom: 20px;
+            margin-top: -100px; /* Shifts the content up */
+        }
+        
+        /* Gemini Box (New) */
+        .gemini-box {
+            width: 100%;
+            max-width: 600px;
+            background-color: #3B4A62;
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .gemini-box textarea {
+            flex-grow: 1;
+            height: 60px;
+            padding: 10px;
+            border-radius: 8px;
+            border: none;
+            resize: none;
+            background-color: #2D394C;
+            color: #D1CFC9;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .gemini-box textarea::placeholder {
+            color: #9299A6;
+        }
+
+        .gemini-box .icon-btn {
+            background: none;
+            border: none;
+            color: #D1CFC9;
+            font-size: 1.6rem;
+            cursor: pointer;
+            transition: color 0.2s ease;
+            flex-shrink: 0;
+        }
+
+        .gemini-box .icon-btn:hover {
+            color: #9299A6;
+        }
+
+        /* Upload Box (Moved) */
+        .upload-box {
+            background: #D1CFC9;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 12px; /* Changed to full border-radius */
+            width: 100%;
+            max-width: 600px;
+            position: relative;
+        }
+
+        .upload-icon {
+            cursor: pointer;
+            color: #000;
+            font-size: 1.6rem;
+            position: relative;
+        }
+
+        .dropdown {
+            display: none;
+            flex-direction: column;
+            background: #f5f5f5;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            margin-top: 8px;
+            overflow: hidden;
+            animation: fadeIn 0.3s ease-in-out;
+            width: 160px;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            z-index: 500;
+        }
+
+        .dropdown a {
+            padding: 10px 12px;
+            text-decoration: none;
+            color: #000;
+            font-size: 0.95rem;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .dropdown a:last-child {
+            border-bottom: none;
+        }
+
+        .dropdown a:hover {
+            background: #e0e0e0;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 900px) {
+            .hero h1 { font-size: 1.8rem; }
+            .hero p { font-size: 0.95rem; }
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 1.5rem; }
+            .hero p { font-size: 0.9rem; }
+            .main-content { margin-top: -50px; }
+            .gemini-box, .upload-box { flex-direction: column; align-items: stretch; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <a href="i.html"><img src="samvaadsetu.jpg" alt="Logo"></a>
+    </div>
+    <div class="hamburger-menu" onclick="openNav()">☰</div>
+</header>
+
+<div id="mySidebar" class="sidebar">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="i.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="https://moca.gov.in" target="_blank">MOCA</a>
+    <a href="policy.html">Policy</a>
+</div>
+
+<section class="hero">
+    <h1>WELCOME TO SAMVAAD SETU</h1>
+    <p>The Bridge of communication</p>
+</section>
+
+<div class="main-content">
+    <div class="gemini-box">
+        <textarea placeholder="Ask gemini"></textarea>
+        <button class="icon-btn">
+            <i class="fas fa-microphone"></i>
+        </button>
+        <button class="icon-btn">
+            <i class="fas fa-paper-plane"></i>
+        </button>
+    </div>
+
+    <div class="upload-box">
+              <textarea placeholder="Ask your question here..."></textarea>
+        <div class="upload-icon" onclick="toggleDropdown()">
+            <i class="fas fa-upload"></i>
+        </div>
+        <div class="dropdown" id="dropdownMenu">
+            <a href="index.html">All Comments</a>
+            
+            <a href="ii.html">Individual</a>
+        </div>
+    </div>
+</div>
+
+<script>
+    function openNav() {
+        document.getElementById("mySidebar").style.width = "250px";
+    }
+
+    function closeNav() {
+        document.getElementById("mySidebar").style.width = "0";
+    }
+
+    function toggleDropdown() {
+        const menu = document.getElementById("dropdownMenu");
+        menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+    }
+</script>
+</body>
+</html>
