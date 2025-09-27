@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Contact Us — Connect with Us</title>
+    <style>
+      :root {
+        --bg: #e6f2ff; /* light blue */
+        --card: #ffffff;
+        --muted: #4a5568;
+        --accent: #1e40af;
+        --glass: rgba(30, 64, 175, 0.06);
+        --radius: 16px;
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI',
+          Roboto, 'Helvetica Neue', Arial;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        background: linear-gradient(180deg, #e6f2ff 0%, #ffffff 100%);
+        color: #1e3a8a;
+      }
+
+      .wrap {
+        max-width: 1100px;
+        margin: 48px auto;
+        padding: 28px;
+        border-radius: 18px;
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.8),
+          rgba(255, 255, 255, 0.6)
+        );
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      header {
+        display: flex;
+        gap: 18px;
+        align-items: center;
+      }
+
+      header h1 {
+        margin: 0;
+        font-size: 20px;
+        letter-spacing: 0.2px;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: 1fr 420px;
+        gap: 28px;
+        margin-top: 18px;
+      }
+
+      /* left card */
+      .card {
+        background: var(--card);
+        padding: 22px;
+        border-radius: 12px;
+        box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.05);
+      }
+
+      .row {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin: 12px 0;
+      }
+
+      .icon-circle {
+        width: 52px;
+        height: 52px;
+        border-radius: 10px;
+        background: var(--glass);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+
+      .title {
+        font-weight: 600;
+        color: #1e3a8a;
+      }
+
+      .muted {
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .contact-list {
+        display: grid;
+        gap: 10px;
+        margin-top: 12px;
+      }
+
+      a.link {
+        color: var(--accent);
+        text-decoration: none;
+      }
+
+      /* help desk */
+      .help {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+      }
+
+      .help .btn {
+        margin-top: 12px;
+      }
+
+      /* right form */
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      input[type='text'],
+      input[type='email'],
+      textarea {
+        background: transparent;
+        border: 1px solid rgba(30, 64, 175, 0.2);
+        padding: 12px;
+        border-radius: 10px;
+        color: inherit;
+        outline: none;
+      }
+
+      textarea {
+        min-height: 120px;
+        resize: vertical;
+      }
+
+      .btn {
+        background: linear-gradient(90deg, #1e40af, #3b82f6);
+        border: none;
+        padding: 12px 16px;
+        border-radius: 10px;
+        color: white;
+        font-weight: 600;
+        cursor: pointer;
+      }
+
+      .socials {
+        display: flex;
+        gap: 12px;
+      }
+
+      .social-btn {
+        width: 44px;
+        height: 44px;
+        border-radius: 10px;
+        background: var(--glass);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .small {
+        font-size: 13px;
+      }
+
+      /* tags input */
+      .tags {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        padding: 8px;
+        border-radius: 10px;
+        border: 1px dashed rgba(30, 64, 175, 0.2);
+        min-height: 48px;
+      }
+
+      .tag {
+        background: rgba(30, 64, 175, 0.1);
+        padding: 6px 8px;
+        border-radius: 8px;
+        font-size: 13px;
+      }
+
+      .tag .x {
+        margin-left: 8px;
+        cursor: pointer;
+        opacity: 0.8;
+      }
+
+      /* responsive */
+      @media (max-width: 900px) {
+        .grid {
+          grid-template-columns: 1fr;
+        }
+
+        .wrap {
+          margin: 18px;
+          padding: 18px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <header>
+        <div style="display:flex;gap:12px;align-items:center">
+          <!-- small site logo -->
+          <div
+            style="width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,#3b82f6,#1e40af);display:flex;align-items:center;justify-content:center;font-weight:700;color:white"
+          >
+            CO
+          </div>
+          <div>
+            <h1>Contact Us</h1>
+            <div class="muted">We're here to help — call, message or drop by.</div>
+          </div>
+        </div>
+      </header>
+
+      <main class="grid">
+        <!-- Left Side -->
+        <section class="card">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start">
+            <div>
+              <div class="title">Get in touch</div>
+              <div class="muted">Address, phone, emails and working hours</div>
+            </div>
+            <div class="small muted">Open: 9:15 AM — 8:30 PM (Mon — Sun)</div>
+          </div>
+
+          <div class="contact-list">
+            <div class="row">
+              <div class="icon-circle" aria-hidden>
+                📍
+              </div>
+              <div>
+                <div class="title">Our Address</div>
+                <div class="muted">123 Main Street, Example City, EX 123456</div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="icon-circle" aria-hidden>📞</div>
+              <div>
+                <div class="title">Phone</div>
+                <a class="muted link" href="tel:+911234567890">+91 12 3456 7890</a>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="icon-circle" aria-hidden>✉️</div>
+              <div>
+                <div class="title">Email</div>
+                <a class="muted link" href="mailto:help@example.com">help@example.com</a>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="icon-circle" aria-hidden>⏰</div>
+              <div>
+                <div class="title">Working Hours</div>
+                <div class="muted">Mon — Sun: 9:15 AM to 8:30 PM</div>
+              </div>
+            </div>
+          </div>
+
+          <hr style="border:none;height:1px;background:rgba(0,0,0,0.08);margin:18px 0;border-radius:2px"/>
+
+          <div class="help">
+            <div style="flex:1">
+              <div class="title">Customer Help Desk</div>
+              <div class="muted">
+                For account, billing or technical support — our team is available
+                every day.
+              </div>
+            </div>
+          </div>
+
+          <!-- Email Help Desk moved here -->
+          <div style="margin-top:16px;text-align:right">
+            <a class="btn" href="mailto:helpdesk@example.com">Email Help Desk</a>
+          </div>
+        </section>
+
+        <!-- Right Form -->
+        <aside class="card">
+          <div class="title">Reach our team</div>
+          <div class="muted small">
+            Send a message, or add specific team members' emails (comma separated).
+          </div>
+          <form id="contactForm" onsubmit="submitForm(event)">
+            <label class="small">Your name</label>
+            <input type="text" id="name" placeholder="Jane Doe" required />
+
+            <label class="small">Your email</label>
+            <input type="email" id="email" placeholder="you@example.com" required />
+
+            <label class="small">Recipients</label>
+            <div id="tags" class="tags" tabindex="0"></div>
+            <input
+              type="text"
+              id="tagsInput"
+              placeholder="type email and press Enter or comma"
+            />
+
+            <label class="small">Subject</label>
+            <input type="text" id="subject" placeholder="Subject" />
+
+            <label class="small">Message</label>
+            <textarea id="message" placeholder="Write your message here..." required></textarea>
+
+            <div style="display:flex;gap:8px;align-items:center;justify-content:space-between;margin-top:6px">
+              <button type="submit" class="btn">Send message</button>
+              <div class="muted small">Or call us: <a class="link" href="tel:+911234567890">+91 12 3456 7890</a></div>
+            </div>
+          </form>
+        </aside>
+      </main>
+    </div>
+
+    <script>
+      // Tags input for recipients
+      const tagsEl = document.getElementById('tags');
+      const tagsInput = document.getElementById('tagsInput');
+      const tagsList = [];
+
+      function renderTags() {
+        tagsEl.innerHTML = '';
+        tagsList.forEach((t, i) => {
+          const div = document.createElement('div');
+          div.className = 'tag';
+          div.textContent = t;
+
+          const span = document.createElement('span');
+          span.className = 'x';
+          span.innerHTML = '✖';
+          span.onclick = () => {
+            tagsList.splice(i, 1);
+            renderTags();
+          };
+
+          div.appendChild(span);
+          tagsEl.appendChild(div);
+        });
+      }
+
+      function addTag(value) {
+        const email = value.trim();
+        if (!email) return;
+        const re =
+          /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+))|(\".+\"))@(([^<>()[\]\\.,;:\s@\"]+\.)+[^<>()[\]\\.,;:\s@\"]{2,})$/i;
+        if (re.test(email) && !tagsList.includes(email)) {
+          tagsList.push(email);
+          renderTags();
+        }
+      }
+
+      tagsInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ',' || e.key === 'Tab') {
+          e.preventDefault();
+          addTag(tagsInput.value);
+          tagsInput.value = '';
+        }
+      });
+
+      function submitForm(e) {
+        e.preventDefault();
+        alert('Thank you! Your message has been sent.');
+      }
+    </script>
+  </body>
+</html>
